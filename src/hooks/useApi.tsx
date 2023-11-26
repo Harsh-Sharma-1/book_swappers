@@ -26,5 +26,6 @@ export function useApi<T>({ fn }: UseApiProps<T>) {
         data,
         loading,
         error,
+        setData,
     };
 }

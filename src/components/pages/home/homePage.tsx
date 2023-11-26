@@ -56,7 +56,7 @@ const HomePage = (props: Props) => {
                         setShowAddForm(false);
                     }}
                 >
-                    <AddForm />
+                    <AddForm closeForm={() => setShowAddForm(false)} />
                 </Popup>
             )}
             {}

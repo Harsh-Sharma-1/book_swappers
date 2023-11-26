@@ -9,7 +9,7 @@ type Props = {
 
 const Buttons = ({ items }: Props) => {
     return (
-        <div className="flex gap-4 w-full max-w-2xl m-auto my-10 ">
+        <div className="flex gap-4 w-full max-w-2xl m-auto my-10 px-10">
             {items.map((item, i) => (
                 <div
                     className="border-2 border-black 

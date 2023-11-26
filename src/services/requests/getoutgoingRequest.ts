@@ -1,5 +1,9 @@
 import { supabase } from "..";
 
 export const getOutgoingRequest = async (userId: string) => {
-    return await supabase.from("requests").select().eq("sender_id", userId);
+    return await supabase
+        .from("requests")
+        .select()
+        .eq("sender_id", userId)
+        .eq("acceptStatus", "none");
 };

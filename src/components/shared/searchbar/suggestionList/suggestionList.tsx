@@ -8,10 +8,13 @@ type Props = {
 
 const SuggestionList = ({ books }: Props) => {
     return (
-        <div className="absolute left-0 right-0 top-[120%] bottom-[100%] h-52 bg-white shadow-card rounded overflow-y-scroll no-scrollbar">
+        <div className="absolute z-30 left-0 right-0 top-[120%] bottom-[100%] h-52 bg-white shadow-card rounded overflow-y-scroll no-scrollbar">
             <ul className="w-full p-2">
-                {books.map((book,i) => (
-                    <li className="cursor-pointer p-3 hover:bg-gray-100" key={i}>
+                {books.map((book, i) => (
+                    <li
+                        className="cursor-pointer p-3 hover:bg-gray-100"
+                        key={i}
+                    >
                         <Link href={`/book/${book.id}`}>{book.title}</Link>
                     </li>
                 ))}

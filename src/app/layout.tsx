@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { AppContextProvider } from "@/context/appContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -19,7 +21,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <AppContextProvider>
-                    {children}</AppContextProvider>
+                    <ToastContainer />
+                    {children}
+                </AppContextProvider>
             </body>
         </html>
     );

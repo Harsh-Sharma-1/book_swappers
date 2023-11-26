@@ -15,7 +15,7 @@ type notification = {
     link: string | null;
 };
 
-const NotificationItem = ({ image, text, link }: notification) => {
+export const NotificationItem = ({ image, text, link }: notification) => {
     const router = useRouter();
     return (
         <div

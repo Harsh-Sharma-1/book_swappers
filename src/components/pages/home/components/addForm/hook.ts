@@ -1,11 +1,13 @@
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { v4 as uuid } from "uuid";
+
 import { BookCardType } from "@/components/types/book";
 import { useAppContext } from "@/context/appContext";
 import { supabase } from "@/services";
 import { addBook } from "@/services/books/addBook";
-import { useState } from "react";
-import { v4 as uuid } from "uuid";
 
-export const useAddForm = () => {
+export const useAddForm = (closeForm: () => void) => {
     const { user } = useAppContext();
     const [book, setBook] = useState<BookCardType | null>(null);
     const [data, setData] = useState<any>(null);
@@ -30,11 +32,12 @@ export const useAddForm = () => {
             name: user?.user_metadata.name,
             book_image: book?.imageLink,
             book_name: book?.title,
-            book_author: book?.author
+            book_author: book?.author,
         });
         setData(data);
         setLoading(false);
-        alert("Book added");
+        toast("Book added");
+        closeForm();
     };
 
     const uploadImages = async (images: any[]) => {

@@ -20,14 +20,14 @@ const lists = [
         label: "Books",
         link: "/books",
     },
-    {
-        label: "About",
-        link: "/",
-    },
-    {
-        label: "Contact us",
-        link: "/",
-    },
+    // {
+    //     label: "About",
+    //     link: "/",
+    // },
+    // {
+    //     label: "Contact us",
+    //     link: "/",
+    // },
 ];
 
 const NavItem: React.FC<NavItemProps> = ({ label, link }) => {

@@ -17,7 +17,7 @@ const Categories = (props: Props) => {
     ];
     return (
         <div className="w-full py-12 bg-primary-light">
-            <div className="w-[80%] m-auto grid grid-cols-4 gap-3">
+            <div className="w-[80%] m-auto grid grid-cols-2 md:grid-cols-4 gap-3">
                 {categoryList.map((category, i) => (
                     <div
                         onClick={() =>

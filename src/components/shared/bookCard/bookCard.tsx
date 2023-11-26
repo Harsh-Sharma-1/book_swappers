@@ -22,7 +22,9 @@ const BookCard = ({
             <div className="w-full flex gap-3 flex-col pr-5">
                 <h2 className="text-2xl font-bold">{newTitle}</h2>
                 <p>by, {author}</p>
-                <p className="w-[85%] text-base leading-7">{description}</p>
+                <p className="w-[85%] hidden md:block text-base leading-7">
+                    {description}
+                </p>
                 <Link
                     href={`/book/${id}`}
                     className="w-fit bg-orange-500 text-white font-medium px-5 py-2"

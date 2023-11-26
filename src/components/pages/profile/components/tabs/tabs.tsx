@@ -20,7 +20,7 @@ const Tabs = (props: Props) => {
                         Your Books
                     </Link>
                     <Link
-                        href={"/profile/requests"}
+                        href={"/profile/requests/incoming"}
                         className={`w-full ${
                             pathname.includes("/profile/requests") &&
                             "text-orange-400"
@@ -35,7 +35,7 @@ const Tabs = (props: Props) => {
                             "text-orange-400"
                         }`}
                     >
-                        Your Clubs
+                        Your Posts
                     </Link>
                 </div>
             </div>

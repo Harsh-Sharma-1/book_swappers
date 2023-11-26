@@ -19,9 +19,12 @@ const config: Config = {
                     "linear-gradient(to right, rgba(255,124,74,1) 0%, rgba(255,124,74,1) 70%, white 70%, white 100%)",
                 "gradient-bookPage":
                     "linear-gradient(to right, white 0%, white 30%, rgba(255, 124, 75, 1) 30%, rgba(255, 124, 75, 1) 100%)",
+                "gradient-bookPage-mobile":
+                    "linear-gradient(to bottom, white 0%, white 30%, rgba(255, 124, 75, 1) 30%, rgba(255, 124, 75, 1) 100%)",
             },
             boxShadow: {
                 card: "4px 4px 24px 2px rgba(0, 0, 0, 0.15)",
+                cardLight: "4px 4px 24px 2px rgba(0, 0, 0, 0.05)",
             },
             backgroundColor: {
                 "primary-light": "#FF6C36",

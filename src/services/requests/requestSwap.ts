@@ -12,6 +12,7 @@ export const requestSwap = async ({
     status,
     offered_book_data,
     offered_book_id,
+    sender_address,
 }: SwapRequestDto) => {
     return await supabase
         .from("requests")
@@ -27,6 +28,7 @@ export const requestSwap = async ({
             acceptStatus: "none",
             offered_book_data,
             offered_book_id,
+            sender_address,
         })
         .select();
 };

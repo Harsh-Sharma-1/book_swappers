@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { BookCardType } from "@/components/types/book";
 import { useAppContext } from "@/context/appContext";
 import { useApi } from "@/hooks/useApi";
@@ -28,12 +29,14 @@ export const useSwapperList = (bookId: string, bookData: BookCardType) => {
         user,
         book,
         book_id,
+        sender_address,
     }: {
         book_id: string;
         book_data_id: string;
         name: string;
         user: string;
         book: any;
+        sender_address: number;
     }) => {
         const { data, error } = await requestSwap({
             book_id,
@@ -46,6 +49,7 @@ export const useSwapperList = (bookId: string, bookData: BookCardType) => {
             status: false,
             offered_book_id: book.id,
             offered_book_data: book,
+            sender_address,
         });
 
         if (error) {
@@ -61,6 +65,7 @@ export const useSwapperList = (bookId: string, bookData: BookCardType) => {
                 request_id: data[0].id,
             });
         }
+        toast("Request has been submitted");
     };
 
     return {

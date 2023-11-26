@@ -20,6 +20,7 @@ export const useMainNavbar = () => {
 
 export const useNotification = () => {
     const { user } = useAppContext();
+    const [loading, setLoading] = useState(false);
     const [ring, setRing] = useState(false);
     const [notifications, setNotifications] = useState<{
         [key: number]: {
@@ -45,13 +46,17 @@ export const useNotification = () => {
             return;
         }
 
-        supabase
-            .from("notifications")
-            .select()
-            .eq("for", user.id)
-            .then(({ data }) => {
-                data?.map(createNotification);
-            });
+        const init = async () => {
+            setLoading(true);
+            const { data } = await supabase
+                .from("notifications")
+                .select()
+                .eq("for", user.id);
+            setLoading(false);
+            data?.map(createNotification);
+        };
+
+        init();
 
         const insert_channels = supabase
             .channel("notifications")
@@ -79,5 +84,6 @@ export const useNotification = () => {
         notifications: Object.values(notifications),
         ring,
         setRing,
+        loading,
     };
 };

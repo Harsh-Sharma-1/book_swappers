@@ -1,13 +1,9 @@
 import { FormLayout } from "@/components/shared/formLayout/formLayout";
+import Select from "react-select";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useAppContext } from "@/context/appContext";
 import { supabase } from "@/services";
-import React, { useEffect, useState } from "react";
-import { TailSpin } from "react-loader-spinner";
-import Select from "react-select";
-
-type Props = {
-    swapClickHandler: (book: any) => Promise<void>;
-};
+import { Button } from "@/components/shared/button/button";
 
 type BookState = {
     value: {
@@ -19,11 +15,15 @@ type BookState = {
     label: string;
 };
 
-const ListSectionSwapBookForm = ({ swapClickHandler }: Props) => {
+export const FirstForm = ({
+    handleOnSubmit,
+    setBook,
+}: {
+    handleOnSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    setBook: (book: any) => void;
+}) => {
     const [books, setBooks] = useState<BookState[]>([]);
     const { user } = useAppContext();
-    const [book, setBook] = useState<BookState | null>(null);
-    const [loading, setLoading] = useState(false);
     useEffect(() => {
         (async () => {
             const { data } = await supabase
@@ -46,14 +46,6 @@ const ListSectionSwapBookForm = ({ swapClickHandler }: Props) => {
             setBooks(modData!);
         })();
     }, []);
-
-    const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setLoading(true);
-        await swapClickHandler(book?.value);
-        setLoading(false);
-    };
-
     return (
         <FormLayout
             heading={{
@@ -71,23 +63,8 @@ const ListSectionSwapBookForm = ({ swapClickHandler }: Props) => {
                     required
                     onChange={(newValue) => setBook(newValue)}
                 />
-                <button className="w-full bg-[#FF6C36;] py-4 rounded text-white mt-3 flex justify-center items-center">
-                    {loading ? (
-                        <TailSpin
-                            height="30"
-                            width="30"
-                            color="#fff"
-                            ariaLabel="tail-spin-loading"
-                            radius="1"
-                            visible={true}
-                        />
-                    ) : (
-                        "Add Book"
-                    )}
-                </button>
+                <Button text="Next" />
             </form>
         </FormLayout>
     );
 };
-
-export default ListSectionSwapBookForm;

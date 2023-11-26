@@ -7,12 +7,11 @@ type Props = {};
 const UserCard = (props: Props) => {
     const { user } = useAppContext();
     const interests: string[] = Object.values(user?.user_metadata.interests);
-    console.log(user);
     return (
-        <div className="max-w-3xl gap-5 rounded m-auto bg-secondary-light flex flex-col md:flex-row justify-between items-center p-[3%]">
+        <div className="w-full max-w-xl gap-5 rounded m-auto bg-secondary-light flex flex-col md:flex-row justify-between items-center p-[3%]">
             <div className="w-full md:w-[80%]">
                 <img
-                    className="w-[250px] h-[250px] object-cover object-center rounded-full outline outline-4 outline-offset-2 outline-orange-300"
+                    className="w-[200px] h-[200px] object-cover object-center rounded-full outline outline-4 outline-offset-2 outline-orange-300"
                     src={createImageUrl(user?.user_metadata.profile)}
                     alt=""
                 />
@@ -28,7 +27,7 @@ const UserCard = (props: Props) => {
                     {interests.map((category: string, i: number) => (
                         <div
                             key={i}
-                            className="text-center text-sm text-white py-1 bg-orange-300"
+                            className="text-center text-xs text-white py-1 bg-orange-300"
                         >
                             {category}
                         </div>

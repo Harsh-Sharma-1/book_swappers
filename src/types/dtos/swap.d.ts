@@ -9,4 +9,5 @@ export type SwapRequestDto = {
     status: boolean;
     offered_book_id: string;
     offered_book_data: any;
+    sender_address: number;
 };

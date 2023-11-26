@@ -2,11 +2,13 @@ import { AddImages } from "./forms/addImages";
 import { AddFormSearchBook } from "./forms/searchBook";
 import { useAddForm } from "./hook";
 
-type Props = {};
+type Props = {
+    closeForm: () => void;
+};
 
-const AddForm = (props: Props) => {
+const AddForm = ({ closeForm }: Props) => {
     const { book, showForm, loading, setBook, submitForm, changeForm } =
-        useAddForm();
+        useAddForm(closeForm);
     return (
         <>
             {showForm === 1 ? (

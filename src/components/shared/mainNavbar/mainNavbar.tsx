@@ -1,18 +1,14 @@
 "use client";
 import Link from "next/link";
-import {
-    AiFillMessage,
-    AiOutlineBell,
-    AiOutlineMessage,
-    AiOutlineTeam,
-} from "react-icons/ai";
-import NotificationList from "./components/notificationList/notificationList";
+import { AiOutlineBell } from "react-icons/ai";
+
 import SearchBar from "@/components/shared/searchbar/searchbar";
-import { useMainNavbar, useNotification } from "./hooks";
+import { useAppContext } from "@/context/appContext";
 import Popup from "../popup/popup";
 import { UserInfoForm } from "../userInfoForm/userInfoForm";
-import { useState } from "react";
-import { useAppContext } from "@/context/appContext";
+import NotificationList from "./components/notificationList/notificationList";
+import { iconItems, mobileIcons } from "./constants";
+import { useMainNavbar, useNotification } from "./hooks";
 
 type Props = {};
 
@@ -20,41 +16,23 @@ const MainNavbar = (props: Props) => {
     const { navigate, notification, setNotification } = useMainNavbar();
     const { notifications, ring, setRing } = useNotification();
     const { user } = useAppContext();
-    const iconItems = [
-        {
-            icon: AiOutlineMessage,
-            activeIcon: AiFillMessage,
-            title: "chats",
-            link: "/chats",
-            onClick: () => {
-                navigate("/chats");
-            },
-        },
-        {
-            icon: AiOutlineTeam,
-            activeIcon: AiOutlineTeam,
-            title: "clubs",
-            link: "/clubs",
-            onClick: () => {
-                navigate("/clubs");
-            },
-        },
-    ];
 
     return (
         <>
             <div className="w-full p-5 flex justify-between items-center shadow">
-                <Link href={"/home"} className="text-lg w-[30%]">
+                <Link href={"/home"} className="text-xl md:text-lg w-[30%]">
                     Book<span className="font-bold">Swappers</span>
                 </Link>
-                <div className="flex w-full gap-4 items-center">
+                <div className="hidden md:flex w-full gap-4 items-center">
                     <Link
                         href={"/books"}
                         className="font-medium cursor-pointer"
                     >
                         Find Books
                     </Link>
-                    <SearchBar />
+                    <div className="flex-1">
+                        <SearchBar />
+                    </div>
                     <div
                         className="flex gap-4 py-3 relative"
                         onMouseLeave={() => {
@@ -66,7 +44,9 @@ const MainNavbar = (props: Props) => {
                             <Icon.icon
                                 className="cursor-pointer"
                                 size={24}
-                                onClick={Icon.onClick}
+                                onClick={() => {
+                                    navigate(Icon.link);
+                                }}
                                 key={i}
                             />
                         ))}
@@ -82,7 +62,7 @@ const MainNavbar = (props: Props) => {
                         />
 
                         {notification && (
-                            <div className="absolute w-[300px] top-[100%] right-0">
+                            <div className="absolute z-40 w-[300px] top-[100%] right-0">
                                 <NotificationList data={notifications} />
                             </div>
                         )}
@@ -100,6 +80,15 @@ const MainNavbar = (props: Props) => {
                     <UserInfoForm />
                 </Popup>
             )}
+            <div className="fixed md:hidden z-30 bottom-0 w-full h-[60px] px-5 bg-white shadow-inner flex justify-between items-center">
+                {mobileIcons.map((Icon, i) => {
+                    return (
+                        <Link href={Icon.link} key={i}>
+                            <Icon.icon className="text-2xl" />
+                        </Link>
+                    );
+                })}
+            </div>
         </>
     );
 };

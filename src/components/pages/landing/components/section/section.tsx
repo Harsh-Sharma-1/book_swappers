@@ -9,7 +9,7 @@ const Section = ({
     imageSide,
 }: SectionData) => {
     return (
-        <div className="flex gap-5 items-center my-10">
+        <div className="flex flex-col-reverse md:flex-row gap-5 items-center my-10">
             {imageSide === "Left" && (
                 <div className="w-full max-w-xl">
                     <img className="w-full" src={image} alt="" />

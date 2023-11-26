@@ -6,11 +6,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSwapperList } from "./hooks";
 import { createImageUrl } from "@/services";
-import ListSectionBookImagesPopup from "./components/listSectionBookImagesPopup";
-import ListSectionSwapBookForm from "./components/listSectionSwapBookForm";
+import ListSectionBookImagesPopup from "./components/listSectionBookImagesPopup/listSectionBookImagesPopup";
+import ListSectionSwapBookForm from "./components/listSectionSwapBookForm/listSectionSwapBookForm";
 
 interface SwapperListItemProps extends Swapper {
-    swapClickHandler: (book: any) => Promise<void>;
+    swapClickHandler: (book: any, sender_address: number) => Promise<void>;
 }
 
 export const SwapperListItem = ({
@@ -62,7 +62,13 @@ export const SwapperListItem = ({
             {showSwapBookForm && (
                 <Popup bgClick={() => setShowSwapBookForm(false)}>
                     <ListSectionSwapBookForm
-                        swapClickHandler={swapClickHandler}
+                        swapClickHandler={async (
+                            book: any,
+                            sender_address: any
+                        ) => {
+                            await swapClickHandler(book, sender_address);
+                            setShowSwapBookForm(false)
+                        }}
                     />
                 </Popup>
             )}
@@ -106,13 +112,17 @@ export const SwapperListSection = ({
                         {data?.map((swapper, i) => (
                             <SwapperListItem
                                 {...swapper}
-                                swapClickHandler={async (book: any) => {
+                                swapClickHandler={async (
+                                    book: any,
+                                    sender_address: number
+                                ) => {
                                     return await swapClickHandler({
                                         book_id: swapper.book_id,
                                         book_data_id: swapper.book_data_id,
                                         name: swapper.name,
                                         user: swapper.user,
                                         book,
+                                        sender_address,
                                     });
                                 }}
                                 key={i}

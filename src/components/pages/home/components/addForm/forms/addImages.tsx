@@ -1,3 +1,4 @@
+import { Button } from "@/components/shared/button/button";
 import { FormLayout } from "@/components/shared/formLayout/formLayout";
 import { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
@@ -67,20 +68,7 @@ export const AddImages = ({ submitForm, loading }: AddImagesProps) => {
                     ))}
                 </div>
 
-                <button className="w-full bg-[#FF6C36;] py-4 rounded text-white mt-3 flex justify-center items-center">
-                    {loading ? (
-                        <TailSpin
-                            height="30"
-                            width="30"
-                            color="#fff"
-                            ariaLabel="tail-spin-loading"
-                            radius="1"
-                            visible={true}
-                        />
-                    ) : (
-                        "Add Book"
-                    )}
-                </button>
+                <Button loading={loading} text="Add Book" />
             </form>
         </FormLayout>
     );

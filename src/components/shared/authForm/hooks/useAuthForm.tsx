@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 
 export const useAuthForm = (action: "signup" | "login") => {
     const [submitted, setSubmitted] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState({
         name: "",
         email: "",
