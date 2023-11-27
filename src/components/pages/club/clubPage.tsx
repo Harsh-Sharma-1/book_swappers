@@ -31,7 +31,7 @@ const ClubPage = (props: Props) => {
     });
 
     const club = clubData.filter(
-        (item) => item.id === parseInt(club_id ? "1" : "2")
+        (item) => item.id === parseInt(club_id ? club_id[0] : "2")
     )[0];
     return (
         <div className="bg-white rounded-t-xl -mt-28 overflow-hidden pb-10">

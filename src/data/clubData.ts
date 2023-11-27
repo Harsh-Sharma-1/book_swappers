@@ -5,7 +5,7 @@ export const clubData = [
         description: "a group for mystery lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://img.freepik.com/free-vector/peaceful-hill-forest-tree-mountains-rock-beautiful-landscape-outdoors-adventure-green-silhouette-illustration_1150-39395.jpg",
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ export const clubData = [
         description: "a group for adventure lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://img.freepik.com/free-vector/adventure-background_23-2149048249.jpg",
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ export const clubData = [
         description: "a group for drama lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://images.vexels.com/content/169937/preview/drama-subject-illustration-21a0f6.png",
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ export const clubData = [
         description: "a group for fiction lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://static.vecteezy.com/system/resources/thumbnails/024/592/513/small_2x/river-in-canyon-desert-cartoon-landscape-free-vector.jpg",
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ export const clubData = [
         description: "a group for comedy lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://img.pikbest.com/backgrounds/20190730/mountain-hills-green-nature-in-summer-design-on-vector-illustration-background-v_1517323jpg!sw800",
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ export const clubData = [
         description: "a group for humor lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://img.freepik.com/free-vector/gradient-mountain-landscape_52683-77407.jpg",
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ export const clubData = [
         description: "a group for philoshopy lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://static.vecteezy.com/system/resources/thumbnails/008/277/939/small_2x/background-with-mountains-nature-mountain-in-green-color-free-vector.jpg",
     },
     {
         id: 9,
@@ -69,6 +69,6 @@ export const clubData = [
         description: "a group for politics lovers",
         categories: ["action", "drama"],
         coverImage:
-            "https://thebolotiecollective.files.wordpress.com/2023/02/best-mystery-audiobooks-social.jpg",
+            "https://www.everypixel.com/covers/free/vector/nature/cover.jpg",
     },
 ];

@@ -23,6 +23,12 @@ const MainNavbar = (props: Props) => {
                 <Link href={"/home"} className="text-xl md:text-lg w-[30%]">
                     Book<span className="font-bold">Swappers</span>
                 </Link>
+                <Link
+                    href={"/profile"}
+                    className="block md:hidden px-4 py-2 font-medium text-white uppercase bg-orange-600 cursor-pointer"
+                >
+                    Profile
+                </Link>
                 <div className="hidden md:flex w-full gap-4 items-center">
                     <Link
                         href={"/books"}

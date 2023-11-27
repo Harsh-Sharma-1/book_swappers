@@ -1,10 +1,9 @@
+import { BookCardType } from "@/components/types/book";
+import { useApi } from "@/hooks/useApi";
 import { bookDataConvertor, getBookById } from "@/services/books/listBooks";
-import { useEffect, useState } from "react";
 import { FallingLines } from "react-loader-spinner";
 import { BookInfoSection } from "./components/bookInfoSection/bookInfoSection";
-import { BookCardType } from "@/components/types/book";
 import { SwapperListSection } from "./components/swapperListSection/swapperListSection";
-import { useApi } from "@/hooks/useApi";
 
 export const BookPage = ({ bookId }: { bookId: string }) => {
     const { data, loading, error } = useApi<BookCardType>({
