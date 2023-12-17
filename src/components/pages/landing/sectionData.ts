@@ -6,9 +6,7 @@ export const sectionData: SectionData[] = [
             colored: "Find",
             simple: "the book",
         },
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa ante, consequat ut enim ac, dictum iaculis.
-  \nurna. Aliquam scelerisque, sem vel pretium ultrices, sem tortor convallis mauris, ac faucibus enim tellus sed tortor.
-\nPellentesque feugiat nisi quis dolor vulputate, ut semper mi consectetur. Vivamus hendrerit maximus finibus.`,
+        description: `Dive into our diverse collection, spanning genres and authors. Whether it's a bestseller or a hidden gem, easily locate your next favorite read. Explore by title, author, or genre to uncover thrilling narratives waiting just for you.`,
         link: "",
         image: "./assets/landing/find.png",
         imageSide: "Left",
@@ -18,9 +16,7 @@ export const sectionData: SectionData[] = [
             colored: "Ask for",
             simple: "swap",
         },
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa ante, consequat ut enim ac, dictum iaculis.
-\nurna. Aliquam scelerisque, sem vel pretium ultrices, sem tortor convallis mauris, ac faucibus enim tellus sed tortor.
-\nPellentesque feugiat nisi quis dolor vulputate, ut semper mi consectetur. Vivamus hendrerit maximus finibus.`,
+        description: `Engage with fellow book enthusiasts effortlessly. Propose swaps, spark discussions, and share your literary passions. Connect, converse, and expand your reading horizons by initiating exchanges within our vibrant community.`,
         link: "",
         image: "./assets/landing/ask.png",
         imageSide: "Right",
@@ -30,9 +26,7 @@ export const sectionData: SectionData[] = [
             colored: "Swap",
             simple: "the book",
         },
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa ante, consequat ut enim ac, dictum iaculis.
-\nurna. Aliquam scelerisque, sem vel pretium ultrices, sem tortor convallis mauris, ac faucibus enim tellus sed tortor.
-\nPellentesque feugiat nisi quis dolor vulputate, ut semper mi consectetur. Vivamus hendrerit maximus finibus.`,
+        description: `Seamlessly execute swaps with ease. Coordinate logistics, organize meet-ups, or ship securely. Revel in the joy of sharing stories while building your personal library through seamless, successful exchanges. Experience the magic of trading tales with like-minded book lovers.`,
         link: "",
         image: "./assets/landing/swap.png",
         imageSide: "Left",
